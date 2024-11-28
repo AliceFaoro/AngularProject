@@ -1,0 +1,38 @@
+<div id="mainFaculty">
+
+    <div id="get">
+        <button (click)="GetFaculties()">Stampa Facoltà</button>
+        
+        <div *ngFor="let faculty of faculties">
+            <p><b>Id:</b> {{faculty.id}}, <b>Name:</b> {{faculty.nameFaculty}}</p>
+            
+        </div>
+    </div>
+
+    <div id="getId">
+        <input type="number" placeholder="Inserire id facoltà" #id>
+        <button (click)="GetFaculty(id)" (click)="Clear(id)">Ricerca per id</button>
+        <div id="resultId"></div>
+    </div>
+
+    <div id="add">
+        <input type="number" placeholder="Inserire id facoltà" #idAdd>
+        <input type="text" placeholder="Inserire nome facoltà" #nameAdd>
+        <button (click)="AddFaculty(idAdd, nameAdd)" (click)="Clear2(idAdd, nameAdd)">Aggiungi Facoltà</button>
+        <div id="resultAdd"></div>
+    </div>
+
+    <div id="delete">
+        <input type="number" placeholder="Inserire id facoltà da eliminare" #idRemove>
+        <button (click)="RemoveFaculty(idRemove)" (click)="Clear(idRemove)">Rimuovi Facoltà</button>
+        <div id="resultRemove"></div>
+    </div>
+
+    <div id="update">
+        <input type="number" placeholder="Inserire id facoltà da modificare" #idUpdate>
+        <input type="text" placeholder="Inserire nuovo nome" #nome>
+        <button (click)="UpdateFaculty(idUpdate, nome)" (click)="Clear2(idUpdate, nome)">Aggiorna</button>
+        <div id="resultUpdate"></div>
+    </div>
+
+</div>
